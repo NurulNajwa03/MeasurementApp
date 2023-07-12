@@ -65,7 +65,7 @@ function float_to_string($float, $precision=10) {
 // Length
 function convert_to_meters($value, $from_unit) {
   if(array_key_exists($from_unit, LENGTH_TO_METER)) {
-    return $value * LENGTH_TO_METER[$from_unit];
+    return $value / LENGTH_TO_METER[$from_unit];
   } else {
     return "Unsupported unit.";
   }
@@ -73,7 +73,7 @@ function convert_to_meters($value, $from_unit) {
   
 function convert_from_meters($value, $to_unit) {
   if(array_key_exists($to_unit, LENGTH_TO_METER)) {
-    return $value / LENGTH_TO_METER[$to_unit];
+    return $value * LENGTH_TO_METER[$to_unit];
   } else {
     return "Unsupported unit.";
   }
